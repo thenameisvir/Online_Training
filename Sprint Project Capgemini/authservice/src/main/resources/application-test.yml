@@ -1,0 +1,23 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1 # In-memory DB use karenge tests ke liye
+    driver-class-name: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+  cloud:
+    config:
+      enabled: false # Config server ko disable kiya
+    discovery:
+      enabled: false # Eureka discovery ko disable kiya
+
+eureka:
+  client:
+    enabled: false # Eureka client ko disable kiya
+
+jwt:
+  secret: 5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437
+  expiration: 86400000
